@@ -1,0 +1,272 @@
+# Spark Board Contribution Configuration
+#
+# For more information see:
+# * https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+# * https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+#
+
+menu.cpu=Processor
+menu.clock=Clock
+menu.bod=Brown Out Detection
+
+################################################################################
+################################# RSY-HT-1000 ##################################
+################################################################################
+RSY_HT_1.name=RSY-HT-1000		
+
+RSY_HT_1.upload.tool=avrdude
+RSY_HT_1.upload.protocol=arduino
+RSY_HT_1.upload.maximum_size=30720
+RSY_HT_1.upload.maximum_data_size=2048
+RSY_HT_1.upload.speed=57600
+
+RSY_HT_1.build.mcu=atmega328p
+RSY_HT_1.build.f_cpu=8000000L
+RSY_HT_1.build.board=AVR_PRO
+RSY_HT_1.build.core=arduino:arduino
+### May have problem
+RSY_HT_1.build.variant=eightanaloginputs
+
+RSY_HT_1.bootloader.tool=avrdude
+RSY_HT_1.bootloader.unlock_bits=0x3F
+RSY_HT_1.bootloader.lock_bits=0x0F
+RSY_HT_1.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+############################# Clock: 8MHz Internal #############################
+RSY_HT_1.menu.clock.8MHzInt=8MHz Internal
+
+RSY_HT_1.menu.clock.8MHzInt.bootloader.low_fuses=0xE2
+RSY_HT_1.menu.clock.8MHzInt.bootloader.high_fuses=0xDA
+RSY_HT_1.menu.clock.8MHzInt.bootloader.extended_fuses=0xFD
+
+############################# Clock: 8MHz External #############################
+RSY_HT_1.menu.clock.8MHzExt=8MHz External
+
+RSY_HT_1.menu.clock.8MHzExt.bootloader.low_fuses=0xFF
+RSY_HT_1.menu.clock.8MHzExt.bootloader.high_fuses=0xDA
+RSY_HT_1.menu.clock.8MHzExt.bootloader.extended_fuses=0xFD
+
+
+
+################################################################################
+################################# RSY_EM_2000 ##################################
+################################################################################
+RSY_EM_2.name=RSY_EM_2000
+
+RSY_EM_2.upload.tool=avrdude
+RSY_EM_2.upload.protocol=avr109
+RSY_EM_2.upload.maximum_size=28672
+RSY_EM_2.upload.maximum_data_size=2560
+RSY_EM_2.upload.speed=57600
+RSY_EM_2.upload.disable_flushing=true
+RSY_EM_2.upload.use_1200bps_touch=true
+RSY_EM_2.upload.wait_for_upload_port=true
+
+RSY_EM_2.bootloader.tool=avrdude
+RSY_EM_2.bootloader.unlock_bits=0x3F
+RSY_EM_2.bootloader.lock_bits=0x2F
+RSY_EM_2.bootloader.high_fuses=0xD8
+
+RSY_EM_2.build.board=AVR_PROMICRO
+RSY_EM_2.build.core=arduino:arduino
+RSY_EM_2.build.variant=promicro
+RSY_EM_2.build.mcu=atmega32u4
+### Check if can change name
+RSY_EM_2.build.usb_product="SparkFun Pro Micro"
+RSY_EM_2.build.vid=0x1b4f
+RSY_EM_2.build.extra_flags={build.usb_flags}
+
+############################# Clock: 8MHz Internal #############################
+RSY_EM_2.menu.clock.8MHzInt=8MHz Internal
+
+RSY_EM_2.menu.clock.8MHzIntbuild.pid.0=0x9203
+RSY_EM_2.menu.clock.8MHzInt.build.pid.1=0x9204
+RSY_EM_2.menu.clock.8MHzInt.build.pid=0x9204
+RSY_EM_2.menu.clock.8MHzInt.build.f_cpu=8000000L
+
+RSY_EM_2.menu.clock.8MHzInt.bootloader.low_fuses=0xE2
+RSY_EM_2.menu.clock.8MHzInt.bootloader.extended_fuses=0xFE
+RSY_EM_2.menu.clock.8MHzInt.bootloader.file=caterina/Caterina-promicro8.hex
+
+############################# Clock: 8MHz External #############################
+RSY_EM_2.menu.clock.8MHzExt=8MHz External
+
+RSY_EM_2.menu.clock.8MHzExt.build.pid.0=0x9203
+RSY_EM_2.menu.clock.8MHzExt.build.pid.1=0x9204
+RSY_EM_2.menu.clock.8MHzExt.build.pid=0x9204
+RSY_EM_2.menu.clock.8MHzExt.build.f_cpu=8000000L
+
+RSY_EM_2.menu.clock.8MHzExt.bootloader.low_fuses=0xFF
+RSY_EM_2.menu.clock.8MHzExt.bootloader.extended_fuses=0xFE
+RSY_EM_2.menu.clock.8MHzExt.bootloader.file=caterina/Caterina-promicro8.hex
+
+############################# Clock: 16MHz External ############################
+RSY_EM_2.menu.clock.16MHzExt=16MHz External
+
+RSY_EM_2.menu.clock.16MHzExt.build.pid.0=0x9205
+RSY_EM_2.menu.clock.16MHzExt.build.pid.1=0x9206
+RSY_EM_2.menu.clock.16MHzExt.build.pid=0x9206
+RSY_EM_2.menu.clock.16MHzExt.build.f_cpu=16000000L
+
+RSY_EM_2.menu.clock.16MHzExt.bootloader.low_fuses=0xFF
+RSY_EM_2.menu.clock.16MHzExt.bootloader.extended_fuses=0xCB
+RSY_EM_2.menu.clock.16MHzExt.bootloader.file=caterina/Caterina-promicro16.hex
+
+
+
+################################################################################
+############################# Generic ATMEGA328P ###############################
+################################################################################
+Generic_328P.name=Generic ATMEGA328P		
+
+Generic_328P.upload.tool=avrdude
+Generic_328P.upload.protocol=arduino
+Generic_328P.upload.maximum_size=30720
+Generic_328P.upload.maximum_data_size=2048
+Generic_328P.upload.speed=57600
+
+Generic_328P.build.mcu=atmega328p
+Generic_328P.build.board=AVR_PRO
+Generic_328P.build.core=arduino:arduino
+### May have problem
+Generic_328P.build.variant=eightanaloginputs
+
+Generic_328P.bootloader.tool=avrdude
+Generic_328P.bootloader.unlock_bits=0x3F
+Generic_328P.bootloader.lock_bits=0x0F
+Generic_328P.bootloader.high_fuses=0xDA
+
+############################# Clock: 8MHz Internal #############################
+Generic_328P.menu.clock.8MHzInt=8MHz Internal
+
+Generic_328P.menu.clock.8MHzInt.build.f_cpu=8000000L
+
+Generic_328P.menu.clock.8MHzInt.bootloader.low_fuses=0xE2
+Generic_328P.menu.clock.8MHzInt.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+############################# Clock: 8MHz External #############################
+Generic_328P.menu.clock.8MHzExt=8MHz External
+
+Generic_328P.menu.clock.8MHzExt.build.f_cpu=8000000L
+
+Generic_328P.menu.clock.8MHzExt.bootloader.low_fuses=0xFF
+Generic_328P.menu.clock.8MHzExt.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+############################# Clock: 16MHz External ############################
+Generic_328P.menu.clock.16MHzExt=16MHz External
+
+Generic_328P.menu.clock.16MHzExt.build.f_cpu=16000000L
+
+Generic_328P.menu.clock.16MHzExt.bootloader.low_fuses=0xFF
+Generic_328P.menu.clock.16MHzExt.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
+
+################################## BOD: 4.3V ###################################
+Generic_328P.menu.bod.43V=4.3V
+Generic_328P.menu.bod.43V.bootloader.extended_fuses=0xFC
+
+################################## BOD: 2.7V ###################################
+Generic_328P.menu.bod.27V=2.7V
+Generic_328P.menu.bod.27V.bootloader.extended_fuses=0xFD
+
+################################## BOD: 1.8V ###################################
+Generic_328P.menu.bod.18V=1.8V
+Generic_328P.menu.bod.18V.bootloader.extended_fuses=0xFE
+
+################################## BOD: None ###################################
+Generic_328P.menu.bod.none=None
+Generic_328P.menu.bod.none.bootloader.extended_fuses=0xFF
+
+
+
+################################################################################
+############################# Generic ATMEGA32U4 ###############################
+################################################################################
+Generic_32U4.name=Generic ATMEGA32U4
+
+Generic_32U4.upload.tool=avrdude
+Generic_32U4.upload.protocol=avr109
+Generic_32U4.upload.maximum_size=28672
+Generic_32U4.upload.maximum_data_size=2560
+Generic_32U4.upload.speed=57600
+Generic_32U4.upload.disable_flushing=true
+Generic_32U4.upload.use_1200bps_touch=true
+Generic_32U4.upload.wait_for_upload_port=true
+
+Generic_32U4.bootloader.tool=avrdude
+Generic_32U4.bootloader.unlock_bits=0x3F
+Generic_32U4.bootloader.lock_bits=0x2F
+Generic_32U4.bootloader.low_fuses=0xFF
+Generic_32U4.bootloader.high_fuses=0xD8
+
+Generic_32U4.build.board=AVR_PROMICRO
+Generic_32U4.build.core=arduino:arduino
+Generic_32U4.build.variant=promicro
+Generic_32U4.build.mcu=atmega32u4
+Generic_32U4.build.usb_product="SparkFun Pro Micro"
+Generic_32U4.build.vid=0x1b4f
+Generic_32U4.build.extra_flags={build.usb_flags}
+
+############################# Clock: 8MHz Internal #############################
+Generic_32U4.menu.clock.8MHzInt=8MHz Internal
+
+Generic_32U4.menu.clock.8MHzIntbuild.pid.0=0x9203
+Generic_32U4.menu.clock.8MHzInt.build.pid.1=0x9204
+Generic_32U4.menu.clock.8MHzInt.build.pid=0x9204
+Generic_32U4.menu.clock.8MHzInt.build.f_cpu=8000000L
+
+Generic_32U4.menu.clock.8MHzInt.bootloader.low_fuses=0xE2
+Generic_32U4.menu.clock.8MHzInt.bootloader.file=caterina/Caterina-promicro8.hex
+
+############################# Clock: 8MHz External #############################
+Generic_32U4.menu.clock.8MHzExt=8MHz External
+
+Generic_32U4.menu.clock.8MHzExt.build.pid.0=0x9203
+Generic_32U4.menu.clock.8MHzExt.build.pid.1=0x9204
+Generic_32U4.menu.clock.8MHzExt.build.pid=0x9204
+Generic_32U4.menu.clock.8MHzExt.build.f_cpu=8000000L
+
+Generic_32U4.menu.clock.8MHzExt.bootloader.low_fuses=0xFF
+Generic_32U4.menu.clock.8MHzExt.bootloader.file=caterina/Caterina-promicro8.hex
+
+############################# Clock: 16MHz External #############################
+Generic_32U4.menu.clock.16MHzExt=16MHz External
+
+Generic_32U4.menu.clock.16MHzExt.build.pid.0=0x9205
+Generic_32U4.menu.clock.16MHzExt.build.pid.1=0x9206
+Generic_32U4.menu.clock.16MHzExt.build.pid=0x9206
+Generic_32U4.menu.clock.16MHzExt.build.f_cpu=16000000L
+
+Generic_32U4.menu.clock.16MHzExt.bootloader.low_fuses=0xFF
+Generic_32U4.menu.clock.16MHzExt.bootloader.file=caterina/Caterina-promicro16.hex
+
+################################## BOD: 4.3V ###################################
+Generic_32U4.menu.bod.43V=4.3V
+Generic_32U4.menu.bod.43V.bootloader.extended_fuses=0xF8
+
+################################## BOD: 3.5V ###################################
+Generic_32U4.menu.bod.35V=3.5V
+Generic_32U4.menu.bod.35V.bootloader.extended_fuses=0xF9
+
+################################## BOD: 3.4V ###################################
+Generic_32U4.menu.bod.34V=3.4V
+Generic_32U4.menu.bod.34V.bootloader.extended_fuses=0xFA
+
+################################## BOD: 2.6V ###################################
+Generic_32U4.menu.bod.26V=2.6V
+Generic_32U4.menu.bod.26V.bootloader.extended_fuses=0xFB
+
+################################## BOD: 2.4V ###################################
+Generic_32U4.menu.bod.24V=2.4V
+Generic_32U4.menu.bod.24V.bootloader.extended_fuses=0xFC
+
+################################## BOD: 2.2V ###################################
+Generic_32U4.menu.bod.22V=2.2V
+Generic_32U4.menu.bod.22V.bootloader.extended_fuses=0xFD
+
+################################## BOD: 2.0V ###################################
+Generic_32U4.menu.bod.20V=2.0V
+Generic_32U4.menu.bod.20V.bootloader.extended_fuses=0xFE
+
+################################## BOD: None ###################################
+Generic_32U4.menu.bod.none=None
+Generic_32U4.menu.bod.noneV.bootloader.extended_fuses=0xFF

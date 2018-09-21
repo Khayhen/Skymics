@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "Skymics",
+      "maintainer": "Khayhen",
+      "websiteURL": "http://www.skymics.com/",
+      "email": "khayhen@gmail.com",
+      "help": {
+        "online": ""
+      },
+      "platforms": [
+        {
+          "name": "Skymics",
+          "architecture": "avr",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": ""
+          },
+          "url": "https://github.com/Khayhen/AtmelBoards/raw/master/SkymicsPlatforms.tar.bz2",
+          "archiveFileName": "SkymicsPlatforms.tar.bz2",
+          "checksum": "SHA-256:1F7473BB3B1BA1AFA9C617AED1742FDC5F719543BAD04777B2439405279AADA8",
+          "size": "129979",
+          "boards": [
+            {"name": "RSY-HT-1000"},
+            {"name": "RSY-EM-2000"},
+            {"name": "Generic ATMEGA328P"},
+            {"name": "Generic ATMEGA32U4"}
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
