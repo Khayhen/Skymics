@@ -15,12 +15,12 @@
           "version": "1.0.0",
           "category": "Contributed",
           "help": {
-            "online": ""
+            "online": "https://github.com/Khayhen/Skymics/tree/master/Arduino%20Boards"
           },
-          "url": "https://github.com/Khayhen/AtmelBoards/raw/master/SkymicsPlatforms.tar.bz2",
-          "archiveFileName": "SkymicsPlatforms.tar.bz2",
-          "checksum": "SHA-256:1F7473BB3B1BA1AFA9C617AED1742FDC5F719543BAD04777B2439405279AADA8",
-          "size": "129979",
+          "url": "https://github.com/Khayhen/Skymics/raw/master/Arduino%20Boards/Releases/SkymicsPlatforms-1.0.tar.bz2",
+          "archiveFileName": "SkymicsPlatforms-1.0.tar.bz2",
+          "checksum": "SHA-256:92BCBD026390FE083E0ABF98885D0D14BB1A1B435130A5E79884B35EF1D2EABD",
+          "size": "117867",
           "boards": [
             {"name": "RSY-HT-1000"},
             {"name": "RSY-EM-2000"},
